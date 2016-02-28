@@ -1,0 +1,5 @@
+\.vagrant
+\.librarian
+\.tmp
+modules
+Puppetfile.local

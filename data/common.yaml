@@ -1,0 +1,40 @@
+---
+# This configuration is applied to all hosts, unless overridden
+
+# List of classes to include in node
+# All classes in configuration hierarchy are merged together.
+classes:
+  - cfsystem
+
+# Not privileged user name for admin access
+cfauth::admin_user: vagrant
+
+# Password for 'root' and $cfauth::admin_user
+# Create with `mkpasswd -m sha-512`
+# Default: 'vagrant' (DO NOT leave real password here)
+cfauth::admin_password: '$6$W32Psa5h$l7iIrVFdG.6SRta86n1GlDcMBapDP3fpzLD4F2Vkz2xTfd2GFg34h5CEBH3JifiVRszumAteGDLXZEbp2bx3Z0'
+
+# Enable no password sudo for $cfauth::admin_user
+cfauth::sudo_no_password_all: true
+
+# List of SSH authorized keys for for $cfauth::admin_user.
+# For safety reasons, the default NOT SECURE "data_test" key is located at data/id_rsa_test.
+cfauth::admin_auth_keys:
+  data_test:
+    key: 'AAAAB3NzaC1yc2EAAAADAQABAAAAgQDiruOsKA2xTeITRnmLlWph1xNdyoX7cufWU48737E8KQSltRZEeyyLKKPR0L+XTwrvpIhwymikP+7K77KMF8yEg9f98FaYtxGdEvPqGVO7Dezdg3eQmQzYce0/wlgLXn0GJa2TcrG7lvSnHkCjbOV5lRWP5vY92skYQHhuwtMgtQ=='
+    # defaults:
+    #type: ssh-rsa 
+    #
+    # not strictly needed
+    options:
+      - 'from="10.0.0.0/8,192.168.0.0/16"'
+
+# List of hosts allowed to connect
+cfauth::admin_hosts:
+    - '10.0.0.0/8'
+    - '192.168.0.0/16'
+
+# DNS servers to use
+cfnetwork::dns:
+    - '8.8.8.8'
+    - '8.8.4.4'

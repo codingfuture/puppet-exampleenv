@@ -1,0 +1,32 @@
+---
+# Configuration file for Puppet Server node
+
+# See common.yaml
+classes:
+    - cfpuppetserver
+
+# Just for reference, this settings should be set during host init, but can be changed later.
+cfsystem::hierapool::location: 'default'
+cfsystem::hierapool::pool: 'default'
+
+# Essential: configure main interface
+cfnetwork::main:
+    device: eth0
+    address: '192.168.1.32/24'
+    gateway: '192.168.1.1'
+    
+# Uncomment only after firewall configuration is verified with `firehol try`
+#cffirehol::enable: true
+
+# Location of Git repository with environment configurations for r10k
+cfpuppetserver::repo_url: 'file:///vagrant'
+
+# User name for automatic deployment of environment from Git with:
+#  /usr/bin/ssh -T deploypuppet@puppet.example.com ./puppetdeploy.sh
+#cfpuppetserver::deployuser: 'deploypuppet'
+
+# List of SSH authorization keys for $cfpuppetserver::deployuser
+#cfpuppetserver::deployuser_auth_keys:
+#    git_server:
+#        key: 'AAAAB3NzaC1yc2EAAAADAQABAAAAgQDiruOsKA2xTeITRnmLlWph1xNdyoX7cufWU48737E8KQSltRZEeyyLKKPR0L+XTwrvpIhwymikP+7K77KMF8yEg9f98FaYtxGdEvPqGVO7Dezdg3eQmQzYce0/wlgLXn0GJa2TcrG7lvSnHkCjbOV5lRWP5vY92skYQHhuwtMgtQ=='
+

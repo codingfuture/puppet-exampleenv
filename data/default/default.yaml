@@ -1,0 +1,5 @@
+---
+# Configuration file for 'default' pool of 'default' location
+
+# Use either '{}' or any entries to workaround known Puppet bug: https://tickets.puppetlabs.com/browse/PUP-5899 
+empty_file_placeholder: false
