@@ -12,8 +12,7 @@ cfsystem::hierapool::pool: 'default'
 # Essential: configure main interface
 cfnetwork::main:
     device: eth0
-    address: '192.168.1.32/24'
-    gateway: '192.168.1.1'
+    method: dhcp
     
 # Uncomment only after firewall configuration is verified with `firehol try`
 #cffirehol::enable: true

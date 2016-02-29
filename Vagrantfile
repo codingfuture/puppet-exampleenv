@@ -38,6 +38,9 @@ Vagrant.configure(2) do |config|
             v.memory = 1024
             v.cpus = 2
         end
+        node.vm.hostname = 'puppet.example.com'
     end
-    config.vm.define 'clienthost'
+    config.vm.define 'clienthost' do |node|
+        node.vm.hostname = 'host.example.com'
+    end
 end
