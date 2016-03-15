@@ -5,6 +5,8 @@
 # All classes in configuration hierarchy are merged together.
 classes:
   - cfsystem
+  # Access for Total Control user
+  - cftotalcontrol::auth
 
 # Not privileged user name for admin access
 cfauth::admin_user: vagrant

@@ -4,6 +4,8 @@
 # See common.yaml
 classes:
     - cfpuppetserver
+    # Create total control user
+    - cftotalcontrol
 
 # Just for reference, this settings should be set during host init, but can be changed later.
 cfsystem::hierapool::location: 'default'
