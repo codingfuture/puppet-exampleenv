@@ -1,0 +1,1 @@
+This is a reference environment configuration for CodingFuture Puppet modules.
