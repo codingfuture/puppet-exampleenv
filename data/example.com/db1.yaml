@@ -26,8 +26,8 @@ cfdb::instances:
         type: mysql
         port: 3306
         databases:
-            - db1
-            - db2
+            db1: {}
+            db2:
                 roles:
                     ro:
                         readonly: true
